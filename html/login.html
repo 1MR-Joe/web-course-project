@@ -6,17 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gym Login</title>
     <link rel="stylesheet" href="../css/login_style.css">
+    <script src="../js/login_dyn.js"></script>
 </head>
 
-<body>
-    <form >
-        <div class="login_form">
+<body onload="loopImages()">
+    <form onsubmit="return validateEmail();" class="login_form">
+        
+        <div class="side_image">
+            
+            <img id="looping_images" src="../images/loopGym1.jpg" alt="gym_images" width="100%" height="100%" class="image">
+        </div>
+        <div >
+            <img  src="../images/gym_logo.png" alt="logo" width="150px" height="150px" />
+            <br><br>
             <label>Email: </label>
-            <input type="text" placeholder="example@domain.com" required class="login_input" tabindex="0">
+            <br>
+            <input id="email_login" type="email" placeholder="example@domain.com" required class="login_input" tabindex="0">
             <br><br>
             <br>
             <label>Password: </label>
-            <input type="password" placeholder="password" required class="login_input">
+            <br>
+            <input id="password_login" type="password" placeholder="password" required class="login_input">
             <br><br><br>
             <input type="submit" value="Login" class="login_btn">
             <br><br>
