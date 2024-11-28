@@ -6,6 +6,10 @@
     --clr-neutral: #000000;
 }
 
+/* * {
+    outline: 2px solid lime;
+} */
+
 html, body{
     padding: 0;
     margin: 0;
