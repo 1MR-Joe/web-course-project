@@ -1,0 +1,177 @@
+@import 'style.css';
+
+body{
+    background-color: #212121;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+header{
+    height: 100px;
+    margin: 0px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+nav{
+    float: right;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+}
+
+.nav_item{
+    text-decoration: none;
+    color: white;
+    margin: 20px;
+    font-size: 24px;
+}
+
+.membership_plans{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.head_title{
+    color: white;
+}
+
+.membership_cart{
+    border-style: solid;
+    border-color: var(--clr-accent);
+    box-shadow: 0px 0px 10px var(--clr-accent);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: fit-content;
+    background-color: var(--clr-neutral);
+    color: white;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    text-align: left;
+}
+
+.price_text{
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+    margin-top: 10px;
+}
+
+.membership_cart p{
+    display: flex;
+    flex-direction: column;
+}
+
+.features_block{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.plan_btn{
+    background-color: #dac723;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.auth_btn {
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 5px 20px 5px 20px;
+}
+
+.program_type{
+    display: flex;
+    background-color: white;
+    width: 120px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    margin-left: 170px;
+}
+
+.type_category{
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.selected{
+    background-color: #dac723;
+    margin: 2px;
+}
+
+footer{
+    background-color: #212121ed;
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.right_footer{
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.right_footer_upper{
+    display: flex;
+    justify-content: space-evenly; 
+}
+
+
+.right_footer_links{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    margin: 10px;
+}
+
+.right_footer_lower{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.footer_right_icons{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-right: 20px;
+}
+
+.round_image{
+    border-radius: 50%;
+    width: 50px;
+    background-color: #343538;
+}
+
+.left_lower_footer{
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.left_footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom:50px ;
+}
+
+
