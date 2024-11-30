@@ -1,0 +1,142 @@
+@import url('./stlye.css');
+
+html, body {
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    color: var(--clr-secondary);
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+body {
+    background-color: var(--clr-primary);
+}
+
+option {
+    text-transform: capitalize;
+}
+
+main {
+    padding: 0 50px;
+}
+
+.metadata-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filters select {
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.filters select:first-child {
+    margin-right: 10px;
+}
+
+.products-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(385px, 1fr)); /* critical numbers */}
+
+.product-card {
+    max-width: 400px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: var(--clr-primary-shade);
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.product-card > h1, h2, h3, p {
+    margin-bottom: 10px;
+}
+
+.card-left {
+    background-image: url(../images/sweater.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.product-card .card-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 250px;
+}
+
+.product-info p {
+    color: var(--clr-accent);
+}
+
+.action {
+    height: min-content;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dolor-sign {
+    color: var(--clr-accent);
+    font-style: italic;
+}
+
+.favorite-button {
+    --button-width: 30px;
+    width: var(--button-width);
+    height: var(--button-width);
+    border-radius: 5px;
+    padding: 2px;
+    box-sizing: border-box;
+    border: none;
+    background-color: var(--clr-secondary);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favorite-button div {
+    width: 90%;
+    height: 90%;
+    border-radius: 100px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0); /* make text invisible */
+    /* background-color: var(--clr-neutral); */
+    /* background-color: rgba(0, 0, 0, 0); */
+    background-image: url('../images/icons/like.png');
+    background-size: contain;
+}
+
+.buy-button {
+    min-width: 55%;
+    padding: 4px;
+    border-radius: 5px;
+    color: var(--clr-neutral);
+    background-color: var(--clr-accent);
+    display: flex;
+    justify-content: space-between;
+}
+
+.buy-button button {
+    background: inherit;
+    border: none;
+}
+
+.buy-button div {
+    aspect-ratio: 1/1;
+    border-radius: 2px;
+    background-color: var(--clr-secondary);
+    text-align: center;
+    font-weight: bold;
+}
