@@ -1,0 +1,96 @@
+@import url(./style.css);
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* * {
+    outline: 1px solid lime;
+} */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* align-content: space-between; */
+    background-color: var(--clr-primary);
+    /* background-image: url("../images/Gym1.png"); */
+    
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.content {
+    width: 90%;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: var(--clr-primary-shade);
+    box-shadow: 15px 15px 20px black;
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    grid-auto-flow: column;
+    gap: 10px;
+}
+
+form h1{
+    color: var(--clr-accent);
+    font-size: 2.5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+form, form input, form select {
+    font-size: 1.24rem;
+    text-transform: capitalize;
+}
+
+form .fields-container {
+    width: 100%;
+    display: grid;
+    gap: 10px;
+    grid-template-rows: repeat(auto-fit, minmax(60px, 1fr));
+    grid-template-columns: repeat(2, minmax(60px, 1fr));
+}
+
+label {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: block;
+    margin-bottom: 5px;
+    color: var(--clr-accent);
+}
+
+input[type="submit"],
+input[type="reset"] {
+    /* width: 70%;
+    margin-left: 30px; */
+    margin-top: 10px;
+    background-color: var(--clr-neutral);
+    color: white;
+    padding: 15px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="tel"], select {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.img {
+    color: rgba(0, 0, 0, 0);
+    background-image: url(../images/loopGym1.jpg);
+    background-size: contain;
+    /* background-repeat: no-repeat; */
+    background-position: center;
+    border-radius: 20px;
+}

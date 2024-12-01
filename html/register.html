@@ -3,150 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="../css/register.css">
+    <title>Register</title>
   </head>
   <body>
-    <form action="">
-      <h1>The beginning of your story</h1>
-      <div class="input-field">
-        <label for="name">Name</label>
+    <div class="content">
+      <form action="">
+        <h1>The beginning of your story</h1>
 
-        <input type="text" required placeholder="John Doe" id="name" />
-      </div>
-
-      <div class="input-field">
-        <label for="email">Email</label>
-
-        <input
-          type="email"
-          required
-          placeholder="example@gmail.com"
-          id="email"
-        />
-      </div>
-      <div class="input-field">
-        <label for="telephone">Phone number</label>
-
-        <input
-          type="tel"
-          pattern="[0-9]{11,}"
-          minlength="11"
-          maxlength="15"
-          required
-          placeholder="Enter at least 11 digits"
-          id="telephone"
-        />
-      </div>
-      <div class="input-field">
-        <label for="password">Password</label>
-
-        <input type="password" required placeholder="Password" id="password" />
-      </div>
-      <div class="input-field">
-        <label for="Confirm">Confirm Password</label>
-
-        <input
-          type="password"
-          required
-          placeholder="Confirm Password"
-          id="Confirm"
-        />
-      </div>
-
-      <div class="input-field">
-        <label for="gender">Gender</label>
-
-        <select id="gender" name="gender" required>
-          <option value="" disabled selected>Select your gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-      </div>
-
-      <input type="submit" value=" submit" />
-      <input type="reset" />
-    </form>
-    <img src="C:\xampp\htdocs\web-course-project\images\loopGym1.jpg" alt="">
-    <style>
-      html {
-        height: 100%;
-      }
-      body {
-        height: 80%;
-        width: 70%;
-        display: flex;
-        border: 3px solid black;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: center;
-        margin: auto;
-        margin-top: 60px;
-        flex-wrap: wrap;
-        align-content: space-between;
-        background-color: #181C14;
-        box-shadow: 15px 15px 20px black;
-        background-image: url("C:/xampp/htdocs/web-course-project/images/Gym1.png");
-      }
-      h1{
-        color: #E6C767;
-        font-size: 3rem;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-
-      }
-      form {
-        display: flex;
-        padding: 25px;
-        height: 94%;
-        width: 50%;
-        align-items: center;
-        align-content: center;
-        justify-content: center; 
-        flex-direction: column;
-        background-color: #1A1A1D;
-      }
-      .input-field {
-        margin-bottom: 10px;
-        width: 65%;
-      }
-      .input-field > input,
-      select {
-        width: 100%;
-      }
-      select{
-        width: 107%;
-      }
-      label {
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        display: block;
-        margin-bottom: 5px;
-        color: #E6C767;
-      }
-      input[type="submit"],
-      input[type="reset"] {
-        margin-top: 20px;
-        margin-left: 30px;
-        background-color: black;
-        color: white;
-        padding: 15px;
-        outline: none;
-        border: 1px solid black;
-        border-radius: 15px;
-        width: 70%;
-        
-      }
-      input[type="text"],
-      input[type="email"],
-      input[type="password"],
-      input[type="tel"],select   {
-        padding: 15px;
-        outline: none;
-        border: 1px solid black;
-        border-radius: 15px;
-      }
-      img{
-        width: 47%;
-        height: 100%;
-      }
-    </style>
+        <div class="fields-container">
+          <div class="input-field">
+            <label for="name">Name</label>
+    
+            <input type="text" required placeholder="John Doe" id="name" />
+          </div>
+    
+          <div class="input-field">
+            <label for="email">Email</label>
+    
+            <input
+              type="email"
+              required
+              placeholder="example@gmail.com"
+              id="email"
+            />
+          </div>
+          <div class="input-field">
+            <label for="telephone">Phone number</label>
+    
+            <input
+              type="tel"
+              pattern="[0-9]{11,}"
+              minlength="11"
+              maxlength="15"
+              required
+              placeholder="Enter at least 11 digits"
+              id="telephone"
+            />
+          </div>
+          <div class="input-field">
+            <label for="password">Password</label>
+    
+            <input type="password" required placeholder="Password" id="password" />
+          </div>
+          <div class="input-field">
+            <label for="Confirm">Confirm Password</label>
+    
+            <input
+              type="password"
+              required
+              placeholder="Confirm Password"
+              id="Confirm"
+            />
+          </div>
+    
+          <div class="input-field">
+            <label for="gender">Gender</label>
+    
+            <select id="gender" name="gender" required>
+              <option value="" disabled selected>Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+          <input type="reset" value="reset" />
+          <input type="submit" value="submit" />
+        </div>
+  
+      </form>
+      
+      <!-- <img src="../images/loopGym1.jpg" alt=""> -->
+      <div class="img">text</div>
+    </div>
   </body>
 </html>
