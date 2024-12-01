@@ -32,18 +32,36 @@ body {
     display: grid;
     grid-template-columns: 1.25fr 0.75fr;
     grid-auto-flow: column;
-    gap: 10px;
-}
-
-form h1{
-    color: var(--clr-accent);
-    font-size: 2.5rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    gap: 20px;
 }
 
 form, form input, form select {
-    font-size: 1.24rem;
+    font-size: 1.25rem;
+}
+
+form h1{
+    font-size: 2.5rem;
+}
+
+form > h1, h2, h3, label, p {
     text-transform: capitalize;
+    color: var(--clr-accent);
+}
+
+form p {
+    font-size: 1.125rem;
+    text-align: center;
+    color: var(--clr-secondary);
+}
+
+form p a {
+    font-weight: bold;
+    color: var(--clr-accent);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
 }
 
 form .fields-container {
@@ -54,12 +72,6 @@ form .fields-container {
     grid-template-columns: repeat(2, minmax(60px, 1fr));
 }
 
-label {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    display: block;
-    margin-bottom: 5px;
-    color: var(--clr-accent);
-}
 
 input[type="submit"],
 input[type="reset"] {
