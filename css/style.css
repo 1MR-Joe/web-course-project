@@ -84,17 +84,17 @@ header button {
 
 /* footer styling */
 footer{
-    background-color: #fff;
+    /* background-color: var(--clr-neutral); */
     margin: 50px 20px 20px 20px;
     display: flex;
     justify-content: space-between;
     padding: 20px;
-    color: black !important;
+    color: white !important;
     border-radius: var(--section-border-radius);
 }
 
 footer a {
-    color: black !important;
+    color: white !important;
 }
 
 .right_footer{

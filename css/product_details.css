@@ -74,7 +74,7 @@ h3{
 }
 
 .reviews-main-div{
-    background-color:#323232;
+    background-color: var(--clr-primary-shade);
     padding: 20px;
     margin: 20px;
     margin-top: 50px;
@@ -91,7 +91,7 @@ h3{
 .review_avatar{
     border-radius: 50%;
     margin: 20px;
-    background-color: #dac723;
+    background-color: var(--clr-accent);
 }
 
 .review_content{
@@ -110,7 +110,7 @@ h3{
 }
 
 .star_checked{
-    color: #dac723;
+    color: var(--clr-accent);
 }
 
 .comment_field{
