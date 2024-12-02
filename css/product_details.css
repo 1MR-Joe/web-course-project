@@ -1,0 +1,148 @@
+/*product image background*/
+body{
+    background-color: #212121;
+}
+
+.main-div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+}
+.product-image {
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #8B8B8B;
+    width: 50%;
+    border-radius: 20px;
+    z-index: -1;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.description{
+    color: white;
+    font-size: 18px;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.card_btn{
+    background-color: #dac723;
+    border-radius: 5px;
+    font-weight: bold;
+    width: 50%;
+    font-size: 20px;
+    margin-left: 10px;
+    outline: none;
+    border: none
+}
+
+.qt-text{
+    font-size: 18px;
+    padding: 0px;
+    width: 30%;
+    text-align: center;
+    outline: none;
+    border: none;
+
+}
+
+.qt-label{
+    font-size: 18px;
+    padding: 2px;
+    width: fit-content;
+    color: white;
+}
+
+label{
+    font-size: 18px;
+}
+h2{
+    color: white;
+    font-size: 2rem;
+}
+h3{
+    color: white;
+    font-size: 2rem;
+}
+
+.reviews-main-div{
+    background-color:#323232;
+    padding: 20px;
+    margin: 20px;
+    margin-top: 50px;
+    border-radius: 20px;
+}
+
+.review_card{
+    background-color: #8B8B8B;
+    display: flex;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+.review_avatar{
+    border-radius: 50%;
+    margin: 20px;
+    background-color: #dac723;
+}
+
+.review_content{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.rating{
+    margin-top: 0px;
+}
+
+.star{
+    color: #bbbbbb;
+    padding: 0px;
+    font-size: 30px;
+}
+
+.star_checked{
+    color: #dac723;
+}
+
+.comment_field{
+    width: 90%;
+    background-color: #8B8B8B;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 5px;
+}
+
+::placeholder{
+    color: #f1e792;
+}
+
+.comment_btn{
+    width: 5%;
+    margin-bottom: 20px;
+}
+
+.whish_list_heart{
+    background-color: white;
+    font-size: larger;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
