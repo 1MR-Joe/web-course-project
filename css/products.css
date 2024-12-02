@@ -1,6 +1,6 @@
 @import url('./style.css');
 
-h1, h2, h3 {
+h2, h3 {
     color: var(--clr-secondary);
     margin: 0;
 }
@@ -17,6 +17,14 @@ option {
     text-transform: capitalize;
 }
 
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
 main {
     padding: 0 50px;
 }
@@ -26,6 +34,10 @@ main {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+}
+
+.metadata-section h1 {
+    color: var(--clr-secondary);
 }
 
 .filters select {

@@ -81,7 +81,7 @@ main > div {
 .metrics-section {
     box-sizing: border-box;
     padding: 30px 20px;
-    border-radius: 10px;
+    border-radius: var(--section-border-radius);
     color: var(--clr-neutral);
     background-color: var(--clr-accent);
     
@@ -139,6 +139,12 @@ main > div {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    
+
+    padding: 0 25px 25px 25px;
+    box-sizing: border-box;
+    border-radius: var(--section-border-radius);
+    background-color: var(--clr-primary-shade);
 }
 
 .testimonials {
