@@ -86,6 +86,11 @@ input[type="reset"] {
     border-radius: 10px;
 }
 
+input[type="submit"],
+input[type="reset"]:hover{
+    cursor: pointer;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="password"],

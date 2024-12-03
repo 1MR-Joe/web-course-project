@@ -4,7 +4,9 @@ function validateEmail(){
    let email_regexp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
    if(!email_text.value.match(email_regexp)){
-    console.log("Submission failed");
+    email_text.style.outline = "red";
+    email_text.style.boxShadow = "0px 0px 20px red";
+    alert("Invalid email");
     return false;
    }else{
     console.log("Validation passed");
