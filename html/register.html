@@ -18,7 +18,17 @@
     
             <input type="text" required placeholder="John Doe" id="name" />
           </div>
+  
+          <div class="input-field">
+            <label for="gender">Gender</label>
     
+            <select id="gender" name="gender" required>
+              <option value="" disabled selected>Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
           <div class="input-field">
             <label for="email">Email</label>
     
@@ -29,6 +39,7 @@
               id="email"
             />
           </div>
+
           <div class="input-field">
             <label for="telephone">Phone number</label>
     
@@ -42,6 +53,7 @@
               id="telephone"
             />
           </div>
+          
           <div class="input-field">
             <label for="password">Password</label>
     
@@ -57,16 +69,7 @@
               id="Confirm"
             />
           </div>
-    
-          <div class="input-field">
-            <label for="gender">Gender</label>
-    
-            <select id="gender" name="gender" required>
-              <option value="" disabled selected>Select your gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-          </div>
+  
           <input type="submit" value="submit" />
           <input type="reset" value="reset" />
         </div>
