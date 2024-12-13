@@ -220,3 +220,17 @@ main > div {
 footer h1{
     font-size: 64px;
 }
+
+.top_link{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    background-color: var(--clr-accent);
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    width: 50px;
+    height: 50px;
+}
