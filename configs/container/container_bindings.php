@@ -52,7 +52,7 @@ return [
         $conn = DriverManager::getConnection($connectionParams);
 
         $ormSetup = ORMSetup::createAttributeMetadataConfiguration(
-            paths:  [__DIR__ . '/../../app/Entities/'],
+            paths:  [ENTITIES_PATH],
             isDevMode: true
             // TODO: move configuration to app config
         );

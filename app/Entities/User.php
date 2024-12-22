@@ -14,9 +14,9 @@ use Doctrine\ORM\Mapping\Table;
 
 #[Entity, Table(name: 'users')]
 class User {
-    #[Id, Column, GeneratedValue]
+    #[Id, Column(options: ['unsigned' => true]), GeneratedValue]
     private int $id;
-    #[Id, Column]
+    #[Column]
     private string $name;
     #[Column]
     private string $email;
