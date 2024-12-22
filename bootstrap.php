@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Dotenv\Dotenv;
+use Psr\Container\ContainerInterface;
 
 // load packages downloaded by composer
 require __DIR__ . '/vendor/autoload.php';
@@ -14,7 +15,8 @@ require __DIR__ . '/configs/path_constants.php';
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
-// TODO: configure the DI container
-// TODO: move app object configuration to the container
-// TODO: return the container from this file
-// TODO: document the process
+// import container
+// the container holds the whole application configuration
+/** @var ContainerInterface $container */
+$container = require CONFIGS_PATH . '/container/container.php';
+return $container;

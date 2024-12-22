@@ -24,3 +24,10 @@
 - `vlucas/phpdotenv`: loads environment variables from `.env` file
   - environment variables can be DB user, DB password, DB name.
   - note that these things differ depending on the environment each developer is using while working on the project
+
+## Doctrine
+### Doctrine database abstraction layer (DBAL) types
+- check them [here](https://www.doctrine-project.org/projects/doctrine-dbal/en/4.1/reference/types.html)
+
+### ORM meta-data using attributes
+- check attributes reference [here](https://www.doctrine-project.org/projects/doctrine-orm/en/3.2/reference/attributes-reference.html)
