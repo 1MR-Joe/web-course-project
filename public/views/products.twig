@@ -17,7 +17,7 @@
             <div class="navbar">
                 <a href="#">About</a>
                 <a href="./membership.html">Membership</a>
-                <a href="./products.html">Products</a>
+                <a href="products.twig">Products</a>
                 <a href="#">Contact</a>
             </div>
             <div class="authentication-section">
@@ -58,99 +58,8 @@
             </div>
         </div>
 
-        <div class="products-container">
-            <div class="product-card">
-                <div class="card-left">
-                    <!-- <img src="../images/sweater.png" alt=""> -->
-                </div>
-                <div class="card-right">
-                    <div class="product-info">
-                        <h2>Lorem Ipsum Sit</h2>
-                        <p>shirts and sweaters</p>
-                    </div>
-                    <h2><span class="dolor-sign">$</span>49.99</h2>
-                    <div class="action">
-                        <a href="./product_details.html">
-                            <div class="buy-button">
-                                <button type="button">Buy Now!</button>
-                                <div>&rarr;</div>
-                            </div>
-                        </a>
-                        <button type="button" class="favorite-button">
-                            <div>text</div>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="card-left">
-                    <!-- <img src="../images/sweater.png" alt=""> -->
-                </div>
-                <div class="card-right">
-                    <div class="product-info">
-                        <h2>Lorem Ipsum Sit</h2>
-                        <p>shirts and sweaters</p>
-                    </div>
-                    <h2><span class="dolor-sign">$</span>49.99</h2>
-                    <div class="action">
-                        <a href="./product_details.html">
-                            <div class="buy-button">
-                                <button type="button">Buy Now!</button>
-                                <div>&rarr;</div>
-                            </div>
-                        </a>
-                        <button type="button" class="favorite-button">
-                            <div>text</div>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="card-left">
-                    <!-- <img src="../images/sweater.png" alt=""> -->
-                </div>
-                <div class="card-right">
-                    <div class="product-info">
-                        <h2>Lorem Ipsum Sit</h2>
-                        <p>shirts and sweaters</p>
-                    </div>
-                    <h2><span class="dolor-sign">$</span>49.99</h2>
-                    <div class="action">
-                        <a href="./product_details.html">
-                            <div class="buy-button">
-                                <button type="button">Buy Now!</button>
-                                <div>&rarr;</div>
-                            </div>
-                        </a>
-                        <button type="button" class="favorite-button">
-                            <div>text</div>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="card-left">
-                    <!-- <img src="../images/sweater.png" alt=""> -->
-                </div>
-                <div class="card-right">
-                    <div class="product-info">
-                        <h2>Lorem Ipsum Sit</h2>
-                        <p>shirts and sweaters</p>
-                    </div>
-                    <h2><span class="dolor-sign">$</span>49.99</h2>
-                    <div class="action">
-                        <a href="./product_details.html">
-                            <div class="buy-button">
-                                <button type="button">Buy Now!</button>
-                                <div>&rarr;</div>
-                            </div>
-                        </a>
-                        <button type="button" class="favorite-button">
-                            <div>text</div>
-                        </button>
-                    </div>
-                </div>
-            </div>
+        <div class="products-container" id="products-container">
+            {# products here #}
             <div class="product-card">
                 <div class="card-left">
                     <!-- <img src="../images/sweater.png" alt=""> -->
@@ -217,5 +126,29 @@
             </div>
         </div>
     </footer>
+    <div class="product-card" id="product-card" style="display: none">
+        <div class="card-left">
+            <!-- <img src="../images/sweater.png" alt=""> -->
+        </div>
+        <div class="card-right">
+            <div class="product-info">
+                <h2 class="product-name">Lorem Ipsum Sit</h2>
+                <p class="product-description">shirts and sweaters</p>
+            </div>
+            <h2 class="product-price"><span class="dolor-sign">$</span>49.99</h2>
+            <div class="action">
+                <a href="./product_details.html">
+                    <div class="buy-button">
+                        <button type="button">Buy Now!</button>
+                        <div>&rarr;</div>
+                    </div>
+                </a>
+                <button type="button" class="favorite-button">
+                    <div>text</div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../js/products.js"></script>
 </body>
 </html>

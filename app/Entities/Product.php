@@ -19,13 +19,13 @@ class Product{
     private int $id;
 
     #[Column]
-    private string $product_name;
+    private string $name;
+    #[Column(name: 'price_in_cents')]
+    private int $priceInCents;
     #[Column]
-    private string $product_price;
+    private string $image;
     #[Column]
-    private string $product_image;
-    #[Column]
-    private string $product_rating;
-    #[Column]
-    private string $product_description;
+    private string $rating;
+    #[Column(type: Types::STRING, length: 1000)]
+    private string $description;
 }
