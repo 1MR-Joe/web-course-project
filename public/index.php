@@ -13,3 +13,5 @@ $app = $container->get(App::class);
 
 // run app
 $app->run();
+
+// TODO: update anchors to reference routes rather than files

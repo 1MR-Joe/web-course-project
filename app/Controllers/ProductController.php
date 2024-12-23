@@ -19,7 +19,7 @@ class ProductController
     }
 
     public function index(Request $request, Response $response) {
-        return $this->twig->render($response, 'products.twig');
+        return $this->twig->render($response, '/views/products.twig');
     }
 
     public function fetchAll(Request $request, Response $response) {

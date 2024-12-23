@@ -12,14 +12,16 @@ use Slim\Views\Twig;
 return function(App $app) {
     $container = $app->getContainer();
     $container->get(Twig::class);
-    // TODO: add DB connection to container
-    // TODO: abstract EntityManager (DB) access to service layer
-    // TODO: update anchors to reference routes rather than files
 
     $app->get('/', [HomeController::class, 'index']);
 
     $app->get('/products', [ProductController::class, 'index']);
 
     $app->get('/profile', [ProfileController::class, 'index']);
+
+    $app->get('/membership', function (Request $request, Response $response) {
+        $twig = Twig::fromRequest($request);
+        return $twig->render($response, '/views/membership.twig');
+    });
 
 };

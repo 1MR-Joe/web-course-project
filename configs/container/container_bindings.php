@@ -32,11 +32,10 @@ return [
         return $app;
     },
     Twig::class => Twig::create(
-        path: VIEWS_PATH,
+        path: RESOURCES_PATH,
         settings: [
-            // TODO: add caching for better performance
             // TODO: make auto_reload value imported from app config not fixed value
-            'cache' => false,
+            'cache' => STORAGE_PATH . '/cache',
             'auto_reload' => true,
         ]
     ),

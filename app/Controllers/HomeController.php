@@ -15,6 +15,6 @@ class HomeController
     }
 
     public function index(Request $request, Response $response) {
-        return $this->twig->render($response, 'home.html');
+        return $this->twig->render($response, '/views/home.twig');
     }
 }

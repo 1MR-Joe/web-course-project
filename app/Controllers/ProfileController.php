@@ -15,6 +15,6 @@ class ProfileController
     }
 
     public function index(Request $request, Response $response) {
-        return $this->twig->render($response, 'profile.html');
+        return $this->twig->render($response, '/views/profile.twig');
     }
 }
