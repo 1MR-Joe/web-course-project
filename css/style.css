@@ -16,6 +16,10 @@ html, body {
     box-sizing: border-box;
 }
 
+.hidden {
+    display: none !important;
+}
+
 /* header styling */
 header {
     padding: 40px;
