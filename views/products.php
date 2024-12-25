@@ -47,7 +47,7 @@
                 <span class="product-price">49.99</span>
             </h2>
             <div class="action">
-                <a href="product_details.twig">
+                <a href="product_details.html">
                     <div class="buy-button">
                         <button type="button">Buy Now!</button>
                         <div>&rarr;</div>

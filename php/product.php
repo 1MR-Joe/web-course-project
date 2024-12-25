@@ -14,11 +14,11 @@ try {
 
     $operation = strtolower($_GET['operation']);
     
-    $queryParams = [
-        'category' => $_GET['category'] || null,
-        'orderBy' => strtolower($_GET['orderBy']) || null,
-        'orderDir' => strtolower($_GET['orderDir']) || null
-    ];
+    // $queryParams = [
+    //     'category' => $_GET['category'] || null,
+    //     'orderBy' => strtolower($_GET['orderBy']) || null,
+    //     'orderDir' => strtolower($_GET['orderDir']) || null
+    // ];
 
 } catch(Exception $e) {
     http_response_code(400);
@@ -29,15 +29,19 @@ try {
 // foreach function, make sure all parameters exist and call the function
 switch($operation){
     case 'fetch-all':
-        $result = fetchAll($conn, $queryParams);
+        $result = fetchAll($conn);
 
         header('Content-Type: application/json');
         echo json_encode($result);
     break;
+    default:
+        http_response_code(400);
+        header('Content-Type: application/json');
+        echo json_encode(['error' => 'Invalid operation']);
 }
 
-function fetchAll(mysqli $conn, array $queryParams): array {
-    $query = 'select * from products';
+function fetchAll(mysqli $conn, array|null $queryParams=null): array {
+    $query = 'SELECT * FROM products';
 
     // TODO: error here
     // if(! is_null($queryParams['category'])) {

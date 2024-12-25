@@ -9,14 +9,14 @@
   </head>
   <body>
     <div class="content">
-      <form action="" onsubmit="return validateRegisterInfo()">
+      <form action="../php/register.php" method="POST" onsubmit="return validateRegisterInfo()" >
         <h1>The beginning of your story</h1>
 
         <div class="fields-container">
           <div class="input-field">
             <label for="name">Name</label>
     
-            <input type="text" required placeholder="John Doe" id="name" />
+            <input type="text" required placeholder="John Doe" id="name" name="name"/>
           </div>
   
           <div class="input-field">
@@ -37,6 +37,7 @@
               required
               placeholder="example@gmail.com"
               id="email"
+              name="email"
             />
           </div>
 
@@ -51,13 +52,14 @@
               required
               placeholder="Enter at least 11 digits"
               id="telephone"
+              name="phone"
             />
           </div>
           
           <div class="input-field">
             <label for="password">Password</label>
     
-            <input type="password" required placeholder="Password" id="password" />
+            <input type="password" required placeholder="Password" id="password" name="password"/>
           </div>
           <div class="input-field">
             <label for="Confirm">Confirm Password</label>
@@ -67,10 +69,11 @@
               required
               placeholder="Confirm Password"
               id="Confirm"
+              name="Confirm"
             />
           </div>
   
-          <input type="submit" value="submit" />
+          <input type="submit" value="submit" name="submit"/>
           <input type="reset" value="reset" />
         </div>
   
@@ -78,6 +81,8 @@
       </form>
       
       <!-- <img src="../images/loopGym1.jpg" alt=""> -->
+
+     
       <div class="img">text</div>
     </div>
   </body>

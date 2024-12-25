@@ -1,4 +1,4 @@
-
+drop database if exists gym_database;
 -- Create database
 create database gym_database;
 
@@ -11,9 +11,13 @@ create table users(
     name varchar(255) not null, 
     email varchar(255) not null,
     password varchar(255) not null,
+    gender varchar(255) not null,
     phone varchar(255) not null,
     weight float not null,
-    image_path varchar(255)
+    image_path varchar(255),
+    trainer_id int
+
+
 );
 
 create table plans(
@@ -43,8 +47,7 @@ create table products(
     description varchar(1000) not null,
     image varchar(255) not null,
     rating decimal(3, 2) not null,
-    category_id int,
-    foreign key(category_id) references categories(id)
+    category_id int
     -- three digits, two of them are to the right of the fractional point
 );
 
@@ -60,6 +63,7 @@ create table enrollments(
     plan_id int,
     enrollmentDate datetime default current_timestamp,
     primary key (user_id, plan_id)
+
 );
 
 create table trainer_plan(
@@ -69,3 +73,12 @@ create table trainer_plan(
 );
 
 -- to do write the relationships between the tables
+
+Alter table users add foreign key (trainer_id) references trainers(id);
+alter table orders add foreign key (user_id) references users(id);
+alter table orders add foreign key (product_id) references products(id);
+alter table enrollments add foreign key (user_id) references users(id);
+alter table enrollments add foreign key (plan_id) references plans(id);
+alter table trainer_plan add foreign key (trainer_id) references trainers(id);
+alter table trainer_plan add foreign key (plan_id) references plans(id);
+alter table products add foreign key (category_id) references categories(id);

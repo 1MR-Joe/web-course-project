@@ -8,7 +8,7 @@
         <div class="navbar">
             <a href="#">About</a>
             <a href="./membership.html">Membership</a>
-            <a href="./products.html">Products</a>
+            <a href="./products.php">Products</a>
             <a href="#">Contact</a>
         </div>
         <div class="authentication-section">
