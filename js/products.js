@@ -5,10 +5,9 @@ const card = document.getElementById('product-card') || console.log('product car
 const sortSelector = document.getElementById('sort-selector') || console.log('sort selector not found!');
 const categorySelector = document.getElementById('category-selector') || console.log('category selector not found!');
 
-const baseUrl = window.location.origin + "/web-course-project/php/";
-console.log(baseUrl);
-const productsApi = `${baseUrl}product.php?operation=fetch-all`;
-const categoriesApi = `${baseUrl}category.php?operation=fetch-all`;
+
+const productsApi = "/php/product.php?operation=fetch-all";
+const categoriesApi = "/php/category.php?operation=fetch-all";
 
 let filters = {
     category: null,
