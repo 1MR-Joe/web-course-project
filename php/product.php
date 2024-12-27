@@ -1,5 +1,5 @@
 <?php
-include './config.php';
+// include './config.php';
 
 // example routes
 // localhost/product.php?operation=fetch-all

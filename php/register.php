@@ -1,8 +1,10 @@
 <?php
-//add user to database
-include "../php/config.php";
+declare(strict_types=1);
+// TODO: convert to AuthService.php class and move all code here to register function
+$errors = [];
 
 if(isset($_POST['submit'])) {
+    // TODO: validate all values are not null
     $username = $_POST['name'];
     $email = $_POST['email'];
     $gender = $_POST['gender'];
@@ -11,7 +13,7 @@ if(isset($_POST['submit'])) {
 
     $passwordConfirmation = $_POST['Confirm'];
 
-    /*ToDO add the weight field*/ 
+    // TODO: add the weight field
 
     if($password == $passwordConfirmation) {
         $password = password_hash($password, PASSWORD_DEFAULT);
@@ -19,14 +21,11 @@ if(isset($_POST['submit'])) {
         
         $result = mysqli_query($conn, $sql);
         if(!$result){
-            echo "<script>alert('Failed to register');</script>";
-        }else{
-            echo "<script>alert('Successfully registered');</script>";
-            header("Location: ../views/index.php");
+            $errors['db'] = 'registration failed';
         }
     }else{
-        echo "Password confirmation failed";
+        $errors['Confirm'] = 'password and confirmation are different';
     }
-}else{
-    echo "Error: Invalid request method. Please use the POST method to submit the form.";
 }
+
+return $errors;
