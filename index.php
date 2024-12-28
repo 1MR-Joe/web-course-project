@@ -1,6 +1,12 @@
 <?php
 declare(strict_types=1);
 
+// auto loading
+require __DIR__ . '/vendor/autoload.php';
+
+use Dotenv\Dotenv;
+use Services\AuthService;
+
 // TODO: configure session parameters
 // start a new session a resume existing session
 session_start();
@@ -8,9 +14,17 @@ if(! isset($_SESSION['started'])) {
     $_SESSION['started'] = new DateTime();
 }
 
-// TODO: load environment variables and use them
+
+// load environment variables and use them
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 // DB connection
-$conn = mysqli_connect('localhost', 'root', 'admin', 'gym_database');
+try {
+    $conn = mysqli_connect($_ENV['DB_HOST'], $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_NAME']);
+} catch (Exception $e) {
+    header('Location: /error', true, 302);
+}
 
 // TODO: load path_constants
 
@@ -40,18 +54,30 @@ switch ($request) {
     break;
     case '/register':
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $errors = require './php/register.php';
+            $authService = new AuthService($conn);
 
-            if(sizeof($errors) > 0) {
-                echo("<script>alert('registration failed')</script>");
-                // TODO: attach errors in session
-                // TODO: save registration data in session
-            } else {
-                // save user credentials in session
-                session_regenerate_id();
-                // TODO: get id and save it in session
-                $_SESSION['user_email'] = $_POST['email'];
-                header(header: 'Location: /', response_code: 302);
+            try {
+                $errors = $authService->register($_POST);
+
+                if(sizeof($errors) > 0) {
+                    echo("<script>alert('registration failed')</script>");
+                    error_log("validation Errors:" . print_r($errors, true));
+                    
+                    // TODO: attach errors in session
+                    // TODO: save registration data in session (except password and confirmation)
+                    // TODO: show errors in front end
+
+                } else {
+                    // save user credentials in session
+                    session_regenerate_id();
+                    
+                    // TODO: get id and save it in session
+                    $_SESSION['user_email'] = $_POST['email'];
+                    header('Location: /', true, 302);
+                }
+    
+            } catch(Exception $e) {
+                header('Location: /error', true, 302);
             }
         } else {
             require './views/register.html';
@@ -65,13 +91,16 @@ switch ($request) {
         session_destroy();
         header('Location: /');
     break;
-    case '/api':
-        // TODO: remove " /api " from the request string and process the rest of it also using switch case
-    break;
     case '/session':
         echo "<pre>";
         print_r($_SESSION);
         echo "</pre>";
+    break;
+    case '/error':
+        require './views/error.html';
+    break;
+    case '/api':
+        // TODO: remove " /api " from the request string and process the rest of it also using switch case
     break;
     default:
         // TODO: make a 404 page

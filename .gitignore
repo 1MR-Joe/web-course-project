@@ -1,2 +1,7 @@
+# directories
 .idea/
 .vscode/
+vendor
+
+# files
+.env
