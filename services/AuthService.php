@@ -48,4 +48,26 @@ class AuthService {
 
         return $errors;
     }
+
+    public function login(array $data) : array{
+        $email = $data['email'];
+        $password = $data['password'];
+
+        $query = "SELECT * FROM users WHERE email = '$email'";
+
+        $user = mysqli_query($this->conn, $query);
+
+        if(mysqli_num_rows($user) === 0) {
+            return ['email' => 'user not found'];
+        }
+
+        $user = mysqli_fetch_assoc($user);
+
+        if(password_verify($password, $user['password'])) {
+            return [];
+        }else{
+            return ['password' => 'wrong password'];
+        }
+
+    }
 }

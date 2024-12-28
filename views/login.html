@@ -10,7 +10,7 @@
 </head>
 
 <body onload="loopImages()">
-    <form action="" onsubmit="return validateEmail();" class="login_form">
+    <form action="/login" method="post" onsubmit="return validateEmail();" class="login_form">
         
         <div class="side_image">
             
@@ -21,14 +21,14 @@
            
             <div class="login_input_div">
                 <label>Email: </label>
-                <input id="email_login" type="email" placeholder="example@domain.com" required class="login_input" tabindex="0">
+                <input id="email_login" name='email' type="email" placeholder="example@domain.com" required class="login_input" tabindex="0">
             </div>
             
             <div class="login_input_div">
                 <label>Password: </label>
-                <input id="password_login" type="password" placeholder="password" required class="login_input" tabindex="1">
+                <input id="password_login" name="password" type="password" placeholder="password" required class="login_input" tabindex="1">
             </div>
-            <input type="submit" value="Login" class="login_btn"> 
+            <input type="submit" value="Login" name='submit' class="login_btn"> 
             <div class="register_redirection">
                 <label style="font-size: 16px; float: none;">Already have an account?</label>
                 <a href="register.html"> register here</a>

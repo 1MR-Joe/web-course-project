@@ -10,7 +10,7 @@ return function (string $pattern, mysqli $conn) {
             require VIEWS_PATH . '/home.php';
         break;
         case '/products':
-            $productId = $_GET['id'];
+            $productId = $_GET['id'] ?? null;
     
             // if id is provided render the single product page
             if($productId) {
@@ -58,6 +58,27 @@ return function (string $pattern, mysqli $conn) {
         break;
         case '/login':
             // TODO: prevent logged in users from accessing this route
+            if($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $authService = new AuthService($conn);
+
+                try {
+                    $errors = $authService->login($_POST);
+
+                    if(sizeof($errors) > 0) {
+                        echo("<script>alert('login failed')</script>");
+                        error_log("validation Errors:" . print_r($errors, true));
+                    }else{
+                        session_regenerate_id();
+                        
+                        // TODO: get id and save it in session
+                        $_SESSION['user_email'] = $_POST['email'];
+                        header('Location: /', true, 302);
+                    }
+                } catch(Exception $e) {
+                    header('Location: /error', true, 302);
+                }
+
+            }
             require VIEWS_PATH . '/login.html';
         break;
         case '/logout':
