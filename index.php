@@ -28,11 +28,20 @@ try {
 require __DIR__ . '/configs/path_constants.php';
 
 // Routing // TODO: Exception handling
+$routes = require CONFIGS_PATH . '/routes.php';
+$api = require CONFIGS_PATH . '/api.php';
+
 // parse url without origin (domain) and remove query params
 $request = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 // echo $request;
 
-$routes = require CONFIGS_PATH . '/routes.php';
-$routes($request, $conn);
+if ((strpos($request, '/api')) !== false) {
+    // api request
+    $request = str_replace('/api', '', $request);
+    echo $api($request, $conn);
+} else {
+    $routes($request, $conn);
+}
+
 
 session_write_close();

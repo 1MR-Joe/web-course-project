@@ -6,8 +6,8 @@ const sortSelector = document.getElementById('sort-selector') || console.log('so
 const categorySelector = document.getElementById('category-selector') || console.log('category selector not found!');
 
 
-const productsApi = "/php/product.php?operation=fetch-all";
-const categoriesApi = "/php/category.php?operation=fetch-all";
+const productsApi = "/api/products";
+const categoriesApi = "/api/categories";
 
 let filters = {
     category: null,

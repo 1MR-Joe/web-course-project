@@ -94,9 +94,6 @@ return function (string $pattern, mysqli $conn) {
         case '/error':
             require VIEWS_PATH . '/error.html';
         break;
-        case '/api':
-            // TODO: remove " /api " from the request string and process the rest of it also using switch case
-        break;
         case '404':
             require VIEWS_PATH . '/404.html';
         break;

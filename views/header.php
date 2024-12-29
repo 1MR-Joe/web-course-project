@@ -15,7 +15,7 @@
             if(isset($_SESSION['user_email'])) {
                 echo "<div style='border-radius:100px;color:rgba(0,0,0,0);background-color:black;min-width:50px;aspect-ratio:1/1;'>text</div>";
             } else {
-                echo "<div class='authentication-section'><a href='./register.html'><button type='button' class='button-2'>Register</button></a><a href='./login.html'><button type='button' class='button-1'>Login</button></a></div>";
+                echo "<div class='authentication-section'><a href='/register'><button type='button' class='button-2'>Register</button></a><a href='/login'><button type='button' class='button-1'>Login</button></a></div>";
             }
         ?>
     </div>
