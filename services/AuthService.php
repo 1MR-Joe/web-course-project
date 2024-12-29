@@ -53,6 +53,8 @@ class AuthService {
         $email = $data['email'];
         $password = $data['password'];
 
+        $errors = [];
+
         $query = "SELECT * FROM users WHERE email = '$email'";
 
         $user = mysqli_query($this->conn, $query);

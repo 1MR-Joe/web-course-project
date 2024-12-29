@@ -28,4 +28,17 @@ class ProductService {
         // error_log(print_r($products, true));
         return $products;
     }
+
+    public function fetchById(int $id): array {
+        $query = "SELECT * FROM products WHERE id = $id";
+        $result = mysqli_query($this->conn, $query);
+
+        if(! $result) {
+            error_log("Database query failed: " . mysqli_error($this->conn));
+            return [];
+        }
+
+        $product = mysqli_fetch_assoc($result);
+        return $product;
+    }
 }

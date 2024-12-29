@@ -21,6 +21,5 @@ return function (string $pattern, mysqli $conn) {
         default:
             header('Content-Type: application/json', true, 404);
             return json_encode(['error' => '404 Not Found']);
-        break;
     }
 };

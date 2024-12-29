@@ -71,8 +71,10 @@ export function showProducts(products, card, container) {
         cardCopy.querySelector('.product-name').textContent = product.name;
         cardCopy.querySelector('.product-description').textContent = product.description;
         cardCopy.querySelector('.product-price').textContent = `${(product.price_in_cents) / 100}`;
-    
+        cardCopy.querySelector('a.product-details-link').href = `/products?id=${product.id}`;
+        
         // insert card in products container
+
         container.appendChild(cardCopy);
     });
 }

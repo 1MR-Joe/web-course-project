@@ -12,59 +12,40 @@
 
 <body>
 
-    <header>
-        <a href="./home.html" class="logo">
-            <img src="../images/gym_logo.png" alt="logo" width="110px" height="100px">
-            <h1>Five Gym</h1>
-        </a>
+    <?php require __DIR__."/header.php"?>
 
-        <div class="nav-content">
-            <div class="navbar">
-                <a href="#">About</a>
-                <a href="./membership.html">Membership</a>
-                <a href="./products.html">Products</a>
-                <a href="#">Contact</a>
-            </div>
-            <div class="authentication-section">
-                <a href="./register.html">
-                    <button type="button" class="button-2">Register</button>
-                </a>
-
-                <a href="./login.html">
-                    <button type="button" class="button-1">Login</button>
-                </a>
-            </div>
-        </div>
-    </header>
+    
 
     <div class="main-div">
         <!-- Div image -->
         <div class="product-image">
-            <img src="../images/products/product1.png" alt="Product image" width="350px" height="400px">
+            <img src="<?php echo $product['image']?>" alt="Product image" width="350px" height="400px">
             <span class="whish_list_heart" onclick="convert_wish_heart()" id="wish_list_heart">
                 ♥
             </span>
         </div>
         <div>
-            <h2>Product Name</h2>
-            <h3>$49.99</h3>
+            <h2><?php echo $product['name'] ?></h2>
+            <h3><?php echo $product['price_in_cents'] ?></h3>
             <div>
-                <span class="star star_checked">★</span>
-                <span class="star star_checked">★</span>
-                <span class="star star_checked">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
+                                  <?php
+                    $rating = round($product['rating']);
+                    for ($i = 1; $i <= 5; $i++) {
+                        if ($i <= $rating) {
+                            echo '<span class="star star_checked">★</span>';
+                        } else {
+                            echo '<span class="star">★</span>';
+                        }
+                    }
+                    ?>
             </div>
             <p class="description">
-            <pre class="description">
-Lorem ipsum dolor sit amet consectetur adipisicing elit.
-Dolor non, consectetur obcaecati nobis dicta, deserunt
-laudantium vitae culpa, ipsum facere beatae earum 
-ex et numquam porro molestiae. Velit nam quae harum soluta, 
-modi eligendi esse ipsam? Laboriosam quaerat quam,
-reiciendis sunt voluptate ad eveniet. 
-Delectus ducimus eum quis a eos.
-                </pre>
+            
+<?php 
+echo $product['description'];
+
+?>
+                
             </p>
 
             <div>

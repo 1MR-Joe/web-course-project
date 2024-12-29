@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 use Services\AuthService;
+use Services\ProductService;
 
 return function (string $pattern, mysqli $conn) {
 
@@ -15,7 +16,10 @@ return function (string $pattern, mysqli $conn) {
             // if id is provided render the single product page
             if($productId) {
                 $productId = (int) $productId;
-                require VIEWS_PATH . '/product_details.html';
+                $productService = new ProductService($conn);
+                $product = $productService->fetchById($productId);
+                require VIEWS_PATH ."/product_details.php";
+                
             } else {
                 require VIEWS_PATH . '/products.php';
             }
