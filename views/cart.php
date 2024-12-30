@@ -12,8 +12,19 @@
     
     <main>
         <div class="membership-promo">
-            <h2>Free Shipping for Members.</h2>
-            <p>Become a Gym Member for fast and free shipping. Join US or Sign-in</p>
+            <h2 style="color: var(--clr-accent);">Fre Shipping for Members.</h2>
+            <p>
+                Become a Gym Member for fast
+                and free shipping. choose a
+                <a href="/membership"
+                style="color: var(--clr-accent);
+                text-decoration: underline;
+                font-weight: bold;"
+                >
+                    plan
+                </a>
+                now
+            </p>
         </div>
 
         <div class="cart-container" id="cart-container">
