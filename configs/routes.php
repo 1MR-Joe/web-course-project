@@ -36,7 +36,13 @@ return function (string $pattern, mysqli $conn) {
                 // user is logged in
                 $userService = new UserService($conn);
                 $user = $userService->fetchById((int) $_SESSION['user_id']);
-                require VIEWS_PATH . '/profile.php';
+                
+                if($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    $userService->updateUser($_POST);
+                    header('Location: /profile', true, 302);
+                }else{
+                    require VIEWS_PATH . '/profile.php';
+                }
                 
             } else {
                 // user is not logged in

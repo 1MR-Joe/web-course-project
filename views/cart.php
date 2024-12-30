@@ -12,7 +12,7 @@
     
     <main>
         <div class="membership-promo">
-            <h2>Fre Shipping for Members.</h2>
+            <h2>Free Shipping for Members.</h2>
             <p>Become a Gym Member for fast and free shipping. Join US or Sign-in</p>
         </div>
 
