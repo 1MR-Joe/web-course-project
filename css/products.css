@@ -97,6 +97,12 @@ main {
     font-style: italic;
 }
 
+.description-section{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .favorite-button {
     --button-width: 30px;
     width: var(--button-width);

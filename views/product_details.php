@@ -22,7 +22,7 @@
                 ♥
             </span>
         </div>
-        <div>
+        <div style="float: right; width:50%;">
             <h2><?php echo $product['name'] ?? "Product Name"; ?></h2>
             <h3><?php echo $product['price_in_cents'] ?? "$49.99" ?></h3>
             <div>

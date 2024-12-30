@@ -40,7 +40,7 @@
         <div class="card-right">
             <div class="product-info">
                 <h2 class="product-name">Lorem Ipsum Sit</h2>
-                <p class="product-description">shirts and sweaters</p>
+                <p class="product-description description-section">shirts and sweaters</p>
             </div>
             <h2>
                 <span class="dolor-sign">$</span>
