@@ -10,7 +10,11 @@
 
 <body>
 
-    <?php include __DIR__ . '/../components/header.php' ?>
+    <?php
+
+use Services\PlanService;
+
+ include __DIR__ . '/../components/header.php' ?>
     <h1 class="head_title">Find the perfect membership needs</h1>
     <h1 class="head_title">that suites your needs</h1>
 
@@ -21,57 +25,33 @@
             <label class="type_category">Daily</label>
         </div>
         <div class="membership_plans">
+        <?php
+         foreach($plans as $p) {
+            $finalPrice = ((int)$p["price_in_cents"] / 100);
+            $html = <<<html
+                <div class="membership_cart">
+                    <h2>{$p["name"]}</h2>
+                    <p class="description">{$p["description"]}</p>
+                    <p class="price_text">$ {$finalPrice}</p>
+                    <input type="button" value="Get started" class="plan_btn">
+                    <p>Features</p>
+                    <hr width="250px">
+                    <ul class="features_block">
+                        <li><span>Feature 1</span></li>
+                        <li><span>Feature 2</span></li>
+                        <li><span>Feature 3</span></li>
+                        <li><span>Feature 4</span></li>
+                        <li><span>Feature 5</span></li>
+                        <li><span>Feature 6</span></li>
+                    </ul>
+                </div>
+            html;
+            echo $html;
+         }   
 
-            <div class="membership_cart">
-                <h2>Plan1</h2>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p class="price_text">20$</p>
-                <input type="button" value="Get started" class="plan_btn">
-                <p>Features</p>
-                <hr width="250px">
-                <ul class="features_block">
-                    <li><span>Feature 1</span></li>
-                    <li><span>Feature 2</span></li>
-                    <li><span>Feature 3</span></li>
-                    <li><span>Feature 4</span></li>
-                    <li><span>Feature 5</span></li>
-                    <li><span>Feature 6</span></li>
-                </ul>
-            </div>
-            <div class="membership_cart">
-                <h2>Plan2</h2>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p class="price_text">40$</p>
-                <input type="button" value="Get started" class="plan_btn">
-                <p>Features</p>
-                <hr width="250px">
-                <ul class="features_block">
-                    <li><span>Feature 1</span></li>
-                    <li><span>Feature 2</span></li>
-                    <li><span>Feature 3</span></li>
-                    <li><span>Feature 4</span></li>
-                    <li><span>Feature 5</span></li>
-                    <li><span>Feature 6</span></li>
-                </ul>
-            </div>
-            <div class="membership_cart">
-                <h2>Plan3</h2>
-                <p>Lorem ipsum dolor sit amet.</p>
-                <p class="price_text">100$</p>
-                <input type="button" value="Get started" class="plan_btn">
-                <p>Features</p>
-                <hr width="250px">
-                <ul class="features_block">
-                    <li><span>Feature 1</span></li>
-                    <li><span>Feature 2</span></li>
-                    <li><span>Feature 3</span></li>
-                    <li><span>Feature 4</span></li>
-                    <li><span>Feature 5</span></li>
-                    <li><span>Feature 6</span></li>
-                </ul>
+        ?>
+            
 
-
-            </div>
         </div>
     </form>
 

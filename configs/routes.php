@@ -4,6 +4,7 @@ declare(strict_types=1);
 use Services\AuthService;
 use Services\ProductService;
 use Services\UserService;
+use Services\PlanService;
 
 return function (string $pattern, mysqli $conn) {
 
@@ -26,6 +27,8 @@ return function (string $pattern, mysqli $conn) {
             }
         break;
         case '/membership':
+            $planService = new PlanService($conn);
+            $plans = $planService->fetchAll();
             require VIEWS_PATH . '/membership.php';
         break;
         case '/cart':

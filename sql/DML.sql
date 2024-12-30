@@ -12,3 +12,7 @@ insert into users(`name`, `email`, `password`, `gender`, `phone`, `weight`) valu
 
 Insert into cart_items (user_id, product_id, quantity, added_at) values (1, 1, 2, CURRENT_TIMESTAMP);
 Insert into cart_items (user_id, product_id, quantity, added_at) values (1, 2, 5, CURRENT_TIMESTAMP);
+
+Insert into plans(`name`,`price_in_cents`,`description`) values ('silver',2000,"Access to gym facilities during limited hours,Use of standard equipment (e.g., cardio machines, weights),Locker room access.");
+Insert into plans(`name`,`price_in_cents`,`description`) values ('gold',4000,"Extended access to gym facilities (e.g., early morning or late night),Access to group fitness classes (e.g., yoga, spinning, or aerobics),Limited guest passes (e.g., 1-2 per month),Discounts on personal training or retail items.");
+Insert into plans(`name`,`price_in_cents`,`description`) values ('platinum',10000,"24/7 access to gym facilities,Unlimited group classes,Access to premium areas (e.g., spa, pool, sauna, or exclusive training zones),Monthly personal training sessions included,Higher number of guest passes (e.g., 4-5 per month),Free or discounted participation in special events or workshops,Complimentary fitness assessments or customized workout plans.");
