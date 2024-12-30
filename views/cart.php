@@ -19,65 +19,8 @@
         <div class="cart-container" id="cart-container">
             <div class="cart-left">
                 <h1 style="margin-bottom: 15px;font-size: 48px;">Cart</h2>
-                <div class="product-list">
-                    <div class="product-card" id='product-card'>
-                        <div class="product-image">
-                            <img src="../images/products/product1.png" alt="product image" class='product-img-tag'>
-                        </div>
-                        <div class="product-info">
-                            <div class="product-info-upper">
-                                <div class="product-name-price">
-                                    <h1 class='product-name'>Product Name</h1>
-                                    <h1 class='product-price'>$49.99</h1>
-                                </div>
-                                <p class="product-description">
-                                    Lorem ipsum odor amet, consectetuer adipiscing elit. Aenean suspendisse.
-                                </p>
-                                <div class="product-preferences">
-                                    <table>
-                                            <tr><td>
-                                                <label>Size: </label>
-                                                <select class="size-selector">
-                                                    <option value="s">S</option>
-                                                    <option value="m">M</option>
-                                                    <option value="l">L</option>
-                                                    <option value="xl">XL</option>
-                                                </select>
-                                            </td></tr>
-                                            <tr><td>
-                                                <label>Color: </label>
-                                                <select class="color-selector">
-                                                    <option value="red">Red</option>
-                                                    <option value="green">Green</option>
-                                                    <option value="blue">Blue</option>
-                                                </select>
-                                            </td></tr>
-                                            <tr><td>
-                                                <label>Quantity: </label>
-                                                <select class="quantity-selector">
-                                                    <option value="1">1</option>
-                                                    <option value="2">2</option>
-                                                    <option value="3">3</option>
-                                                    <option value="4">4</option>
-                                                    <option value="5">5</option>
-                                                    <option value="6">6</option>
-                                                    <option value="7">7</option>
-                                                    <option value="8">8</option>
-                                                    <option value="9">9</option>
-                                                    <option value="10">10</option>
-                                                </select>
-                                            </td></tr>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="product-info-lower">
-                                <div class="product-control">
-                                    <a href="#">Move to Favorites</a>
-                                    <a href="#">Remove</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="product-list" id="product-list">
+                    <!-- products here -->
                 </div>
             </div>
             <div class="cart-right">
@@ -88,10 +31,10 @@
                     <input type="text" id="promo-code" placeholder="Enter Code">
                   </div>
                   <div class="totals">
-                    <p>Subtotal: <span>$90.00</span></p>
-                    <p>Estimated Shipping & Handling: <span>$8.00</span></p>
-                    <p>Estimated Tax: <span>--</span></p>
-                    <p><strong>Total: <span>$98.00</span></strong></p>
+                    <p>Subtotal: <span>$<span id="subTotal">90.00</span></span></p>
+                    <p>Estimated Shipping & Handling: <span>$<span id="shipping">8.00</span></span></p>
+                    <p>Estimated Tax: <span>$<span id="tax">--</span></span></p>
+                    <p><strong>Total: <span>$<span id="total">98.00</span></span></strong></p>
                   </div>
                   <div class="checkout-buttons">
                     <button class="checkout-btn">Checkout</button>
@@ -102,6 +45,41 @@
         </div>
     </main>
 
+    <div class="product-card hidden" id='product-card'>
+                        <div class="product-image">
+                            <img src="../images/products/product1.png" alt="product image" class='product-img-tag'>
+                        </div>
+                        <div class="product-info">
+                            <div class="product-info-upper">
+                                <div class="product-name-price">
+                                    <h1 class='product-name'>Product Name</h1>
+                                    <h1><span class="dolor-sign">$</span><span class="product-price">49.99</span></h1>
+                                </div>
+                                <p class="product-description">Lorem ipsum odor amet, consectetuer adipiscing elit. Aenean suspendisse.</p>
+                                <div class="product-preferences">
+                                    <label style="margin-right: 10px;">Quantity: </label>
+                                    <select class="quantity-selector">
+                                        <option value="1" selected>1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="product-info-lower">
+                                <div class="product-control">
+                                    <a href="#">Move to Favorites</a>
+                                    <a href="#">Remove</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
     <?php include __DIR__ . '/../components/footer.php' ?>
     <script src="../js/cart.js" type="module"></script>
 </body>

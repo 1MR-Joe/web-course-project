@@ -1,9 +1,9 @@
 import { fetchData, showProducts, fillEntitiesAsSelectorOptions } from "./utils.js";
 
-const container = document.getElementById('products-container') || console.log('products container not found');
-const card = document.getElementById('product-card') || console.log('product card not found!');
-const sortSelector = document.getElementById('sort-selector') || console.log('sort selector not found!');
-const categorySelector = document.getElementById('category-selector') || console.log('category selector not found!');
+const container = document.getElementById('products-container') || console.error('products container not found');
+const card = document.getElementById('product-card') || console.error('product card not found!');
+const sortSelector = document.getElementById('sort-selector') || console.error('sort selector not found!');
+const categorySelector = document.getElementById('category-selector') || console.error('category selector not found!');
 
 
 const productsApi = "/api/products";

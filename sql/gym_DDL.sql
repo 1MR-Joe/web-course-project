@@ -73,7 +73,7 @@ create table trainer_plan(
 );
 
 -- week entity
-create table cart_item(
+create table cart_items(
     user_id int,
     product_id int,
     quantity int not null,
@@ -83,13 +83,11 @@ create table cart_item(
 
 -- to do write the relationships between the tables
 
-Alter table users add foreign key (trainer_id) references trainers(id);
-alter table orders add foreign key (user_id) references users(id);
-alter table orders add foreign key (product_id) references products(id);
+alter table users add foreign key (trainer_id) references trainers(id);
 alter table enrollments add foreign key (user_id) references users(id);
 alter table enrollments add foreign key (plan_id) references plans(id);
 alter table trainer_plan add foreign key (trainer_id) references trainers(id);
 alter table trainer_plan add foreign key (plan_id) references plans(id);
 alter table products add foreign key (category_id) references categories(id);
-alter table user_cart add foreign key (user_id) references users(id);
-alter table user_cart add foreign key (product_id) references products(id);
+alter table cart_items add foreign key (user_id) references users(id);
+alter table cart_items add foreign key (product_id) references products(id);

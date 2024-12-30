@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 use Services\AuthService;
 use Services\ProductService;
+use Services\UserService;
 
 return function (string $pattern, mysqli $conn) {
 
@@ -30,6 +31,18 @@ return function (string $pattern, mysqli $conn) {
         case '/cart':
             require VIEWS_PATH . '/cart.php';
         break;
+        case '/profile':
+            if(isset($_SESSION['user_id'])) {
+                // user is logged in
+                $userService = new UserService($conn);
+                $user = $userService->fetchById((int) $_SESSION['user_id']);
+                require VIEWS_PATH . '/profile.php';
+                
+            } else {
+                // user is not logged in
+                header('Location: /', true, 302);
+            }
+        break;
         case '/register':
             // TODO: prevent logged in users from accessing this route
 
@@ -51,8 +64,11 @@ return function (string $pattern, mysqli $conn) {
                         // save user credentials in session
                         session_regenerate_id();
                         
-                        // TODO: get id and save it in session
-                        $_SESSION['user_email'] = $_POST['email'];
+                        // get id and save it in session
+                        $userService = new UserService($conn);
+                        $user = $userService->fetchByEmail($_POST['email']);
+                        $_SESSION['user_id'] = $user['id'];
+                        $_SESSION['user_email'] = $user['email'];
                         header('Location: /', true, 302);
                     }
         
@@ -67,8 +83,9 @@ return function (string $pattern, mysqli $conn) {
             // TODO: prevent logged in users from accessing this route
             if($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $authService = new AuthService($conn);
-
+                
                 try {
+                    error_log("post array: " . print_r($_POST, true));
                     $errors = $authService->login($_POST);
 
                     if(sizeof($errors) > 0) {
@@ -78,15 +95,19 @@ return function (string $pattern, mysqli $conn) {
                         session_regenerate_id();
                         
                         // TODO: get id and save it in session
-                        $_SESSION['user_email'] = $_POST['email'];
+                        $userService = new UserService($conn);
+                        $user = $userService->fetchByEmail($_POST['email']);
+                        $_SESSION['user_id'] = $user['id'];
+                        $_SESSION['user_email'] = $user['email'];
                         header('Location: /', true, 302);
                     }
                 } catch(Exception $e) {
                     header('Location: /error', true, 302);
                 }
 
+            } else {
+                require VIEWS_PATH . '/login.html';
             }
-            require VIEWS_PATH . '/login.html';
         break;
         case '/logout':
             session_unset();

@@ -48,6 +48,11 @@ header h1 {
     margin-left: 20px; 
 }
 
+.dolor-sign {
+    color: var(--clr-accent);
+    font-style: italic;
+}
+
 .logo{
     display: flex;
     flex-direction: row;

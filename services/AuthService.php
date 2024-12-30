@@ -28,6 +28,7 @@ class AuthService {
             $errors['Confirm'] = 'password and confirmation must be the same';
         }
 
+        // TODO: use user service
         // retrieve all emails
         $query = "SELECT * FROM users WHERE email = '$email'";
         $result = mysqli_query($this->conn, $query);
@@ -55,6 +56,7 @@ class AuthService {
 
         $errors = [];
 
+        // TODO: use userService
         $query = "SELECT * FROM users WHERE email = '$email'";
 
         $user = mysqli_query($this->conn, $query);
