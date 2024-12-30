@@ -27,6 +27,9 @@ return function (string $pattern, mysqli $conn) {
         case '/membership':
             require VIEWS_PATH . '/membership.php';
         break;
+        case '/cart':
+            require VIEWS_PATH . '/cart.php';
+        break;
         case '/register':
             // TODO: prevent logged in users from accessing this route
 

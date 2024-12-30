@@ -4,15 +4,6 @@
     outline: 2px solid lime;
 } */
 
-body{
-    background-color: var(--clr-primary);
-    color: var(--clr-secondary);
-}
-
-a {
-    text-decoration: none;
-    color: var(--clr-secondary);
-}
 
 .bold {
     font-weight: 700;

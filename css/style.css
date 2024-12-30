@@ -16,6 +16,20 @@ html, body {
     box-sizing: border-box;
 }
 
+body{
+    background-color: var(--clr-primary);
+    color: var(--clr-secondary);
+}
+
+main {
+    padding: 0 50px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--clr-secondary);
+}
+
 .hidden {
     display: none !important;
 }
