@@ -7,7 +7,6 @@
     <title>Product page</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/product_details.css">
-    <script src="../js/product_details.js"></script>
 </head>
 
 <body>
@@ -25,7 +24,7 @@
         </div>
         <div style="float: right; width:50%;">
             <h2><?php echo $product['name'] ?? "Product Name"; ?></h2>
-            <h3><?php echo $product['price_in_cents'] ?? "$49.99" ?></h3>
+            <h3>$<?php echo(((int) $product['price_in_cents']) / 100) ?? "$49.99" ?></h3>
             <div>
                     <?php
                         $rating = round($product['rating']) ?? 4;
@@ -43,8 +42,8 @@
             </p>
 
             <div>
-                <label class="qt-label">QT <input type="number" , value="1" class="qt-text" id="qt"></label>
-                <input type="button" value="ADD TO CART" class="card_btn" onclick="">
+                <label class="qt-label">QT <input type="number" value="1" class="qt-text" id="quantity-selector"></label>
+                <input type="button" value="ADD TO CART" class="cart-btn" id="cart-btn" onclick="addToCart()">
             </div>
             <div style="background-color: #323232;
                 color: white;
@@ -136,7 +135,7 @@
     </form>
 
     <?php include __DIR__ . '/../components/footer.php' ?>
-
+    <script src="../js/product_details.js"></script>
 </body>
 
 </html>

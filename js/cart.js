@@ -7,9 +7,9 @@ const shippingContainer = document.getElementById('shipping') || console.error('
 const taxContainer = document.getElementById('tax') || console.error('tax container not found');
 const totalContainer = document.getElementById('total') || console.error('total not found');
 
-const cartApi = "/api/cart?user_id=1";
-let shippingFees = 8;
-let taxes = 10;
+const cartApi = "/api/cart";
+let shippingFees = 0;
+let taxes = 0;
 let data = [];
 
 /**
@@ -34,6 +34,8 @@ function calculateViewTotal(data, shipping, tax, subTotalContainer, shippingCont
     shippingContainer.textContent = shipping;
     taxContainer.textContent = tax;
     
+    shipping = Object.keys(data).length;
+
     let total = subTotal + shipping + tax;
     totalContainer.textContent = total;
     
