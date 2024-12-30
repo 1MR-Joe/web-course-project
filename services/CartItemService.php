@@ -35,7 +35,7 @@ class CartItemService{
 
 
     public function fetchByUserId(int $userId): array {
-        $query = "SELECT * FROM cart_items c JOIN products p WHERE c.user_id = $userId";
+        $query = "SELECT * FROM cart_items c JOIN products p ON c.user_id = p.id WHERE c.user_id = 1";
         $result = mysqli_query($this->conn, $query);
 
         if(! $result) {
