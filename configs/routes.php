@@ -98,7 +98,7 @@ return function (string $pattern, mysqli $conn) {
         case '/error':
             require VIEWS_PATH . '/error.html';
         break;
-        case '404':
+        case '/404':
             require VIEWS_PATH . '/404.html';
         break;
         default:

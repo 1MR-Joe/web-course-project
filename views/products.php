@@ -7,7 +7,7 @@
     <title>Products</title>
 </head>
 <body>
-    <?php include __DIR__ . '/header.php' ?>
+    <?php include __DIR__ . '/../components/header.php' ?>
 
     <main>
         <div class="metadata-section">
@@ -32,7 +32,7 @@
         <div class="products-container" id="products-container"></div>
     </main>
 
-    <?php include __DIR__ . '/footer.php' ?>
+    <?php include __DIR__ . '/../components/footer.php' ?>
     
     <div class="hidden product-card" id="product-card">
         <div class="card-left">

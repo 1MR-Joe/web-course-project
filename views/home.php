@@ -9,7 +9,7 @@
     
 </head>
 <body>
-    <?php include __DIR__ . '/header.php' ?>
+    <?php include __DIR__ . '/../components/header.php' ?>
     
     <main>
         <div class="hero">
@@ -147,7 +147,7 @@
         </div>
     </main>
 
-    <?php include __DIR__ . '/footer.php' ?>
+    <?php include __DIR__ . '/../components/footer.php' ?>
     <script src="../js/home.js"></script>
 </body>
 </html>

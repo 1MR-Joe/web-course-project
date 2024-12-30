@@ -52,7 +52,7 @@ header a {
 
 .nav-content, .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     /* border: 1px solid white; */
 }
@@ -87,6 +87,13 @@ header button {
 }
 
 /* footer styling */
+img.icon {
+    max-width: 30px;
+    max-height: 30px;
+    aspect-ratio: 1/1;
+    filter: invert(1);
+}
+
 footer{
     /* background-color: var(--clr-neutral); */
     margin: 50px 20px 20px 20px;

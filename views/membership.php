@@ -10,7 +10,7 @@
 
 <body>
 
-    <?php include __DIR__ . '/header.php' ?>
+    <?php include __DIR__ . '/../components/header.php' ?>
     <h1 class="head_title">Find the perfect membership needs</h1>
     <h1 class="head_title">that suites your needs</h1>
 
@@ -75,7 +75,7 @@
         </div>
     </form>
 
-    <?php include __DIR__ . '/header.php' ?>
+    <?php include __DIR__ . '/../components/footer.php' ?>
 </body>
 
 </html>

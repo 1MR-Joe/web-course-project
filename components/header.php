@@ -13,9 +13,9 @@
         </div>
         <?php 
             if(isset($_SESSION['user_email'])) {
-                echo "<div style='border-radius:100px;background-image:url(../images/avatars/avatar.png);background-size:cover;min-width:50px;aspect-ratio:1/1;'></div>";
+                require __DIR__ . '/../components/user-buttons.php';
             } else {
-                echo "<div class='authentication-section'><a href='/register'><button type='button' class='button-2'>Register</button></a><a href='/login'><button type='button' class='button-1'>Login</button></a></div>";
+                require __DIR__ . '/../components/auth-buttons.php';
             }
         ?>
     </div>

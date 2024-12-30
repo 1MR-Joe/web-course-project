@@ -24,7 +24,6 @@ try {
     header('Location: /error', true, 302);
 }
 
-// TODO: load path_constants
 require __DIR__ . '/configs/path_constants.php';
 
 // Routing // TODO: Exception handling
