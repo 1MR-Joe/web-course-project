@@ -14,10 +14,10 @@
         <div class="container">
             <h2>Personal Info</h2>
             <div class="profile-layout">
-                <form class="profile" action="">
+                <form class="profile" action="/profile" method="post">
                     <div class="form_attributes">
                         <label for="username">Username</label>
-                        <input type="text" id="username" placeholder="John Doe" required value="<?php echo $user['name'] ?? 'John Doe' ?>">
+                        <input type="text" id="username" name="name" placeholder="John Doe" required value="<?php echo $user['name'] ?? 'John Doe' ?>">
                     </div>
     
                     <div class="form_attributes">
@@ -30,6 +30,7 @@
                             required
                             placeholder="Enter at least 11 digits"
                             id="telephone"
+                            name="phone"
                             value="<?php echo $user['phone'] ?? "Enter at least 11 digits" ?>"
                         />
                     </div>
@@ -50,6 +51,7 @@
                             required
                             placeholder="example@gmail.com"
                             id="email"
+                            name="email"
                             value="<?php echo $user['email'] ?? "example@gmail.com" ?>"
                         />
                     </div>
@@ -61,7 +63,7 @@
                 </form>
     
                 <div class="profile-picture">
-                    <img src="placeholder.jpg" alt="Profile Picture" id="profile-img">
+                    <img src="/images/avatars/avatar.png" alt="Profile Picture" id="profile-img">
                     <input type="file" id="upload-btn" accept="image/*">
                 </div>
             </div>

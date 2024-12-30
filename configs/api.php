@@ -4,6 +4,7 @@ declare(strict_types=1);
 use Services\CategoryService;
 use Services\ProductService;
 use Services\CartItemService;
+use Services\UserService;
 
 return function (string $pattern, mysqli $conn) {
     switch ($pattern) {
@@ -40,7 +41,6 @@ return function (string $pattern, mysqli $conn) {
                 header('Content-Type: application/json', true, 400);
                 return json_encode(['error' => 'Bad Request']);
             }
-            
         default:
             header('Content-Type: application/json', true, 404);
             return json_encode(['error' => '404 Not Found']);
