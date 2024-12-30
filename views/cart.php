@@ -16,19 +16,19 @@
             <p>Become a Gym Member for fast and free shipping. Join US or Sign-in</p>
         </div>
 
-        <div class="cart-container">
+        <div class="cart-container" id="cart-container">
             <div class="cart-left">
                 <h1 style="margin-bottom: 15px;font-size: 48px;">Cart</h2>
                 <div class="product-list">
-                    <div class="product-card">
+                    <div class="product-card" id='product-card'>
                         <div class="product-image">
-                            <img src="../images/products/product1.png" alt="product image">
+                            <img src="../images/products/product1.png" alt="product image" class='product-img-tag'>
                         </div>
                         <div class="product-info">
                             <div class="product-info-upper">
                                 <div class="product-name-price">
-                                    <h1>Product Name</h1>
-                                    <h1>$49.99</h1>
+                                    <h1 class='product-name'>Product Name</h1>
+                                    <h1 class='product-price'>$49.99</h1>
                                 </div>
                                 <p class="product-description">
                                     Lorem ipsum odor amet, consectetuer adipiscing elit. Aenean suspendisse.
@@ -103,5 +103,6 @@
     </main>
 
     <?php include __DIR__ . '/../components/footer.php' ?>
+    <script src="../js/cart.js" type="module"></script>
 </body>
 </html>

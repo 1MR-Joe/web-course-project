@@ -14,6 +14,7 @@
 
     <?php include __DIR__."/../components/header.php"?>
 
+    <form action="">
     <div class="main-div">
         <!-- Div image -->
         <div class="product-image">
@@ -42,7 +43,7 @@
             </p>
 
             <div>
-                <label class="qt-label">QT <input type="number" , value="1" class="qt-text"></label>
+                <label class="qt-label">QT <input type="number" , value="1" class="qt-text" id="qt"></label>
                 <input type="button" value="ADD TO CART" class="card_btn" onclick="">
             </div>
             <div style="background-color: #323232;
@@ -131,6 +132,8 @@
             </div>
         </div>
     </div>
+
+    </form>
 
     <?php include __DIR__ . '/../components/footer.php' ?>
 

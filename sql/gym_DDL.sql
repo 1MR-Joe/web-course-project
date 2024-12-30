@@ -51,12 +51,12 @@ create table products(
     -- three digits, two of them are to the right of the fractional point
 );
 
-create table orders(
-    user_id int,
-    product_id int,
-    order_date datetime default current_timestamp,
-    primary key (user_id, product_id)
-);
+-- create table orders(
+--     user_id int,
+--     product_id int,
+--     order_date datetime default current_timestamp,
+--     primary key (user_id, product_id)
+-- );
 
 create table enrollments(
     user_id int,
@@ -72,6 +72,15 @@ create table trainer_plan(
     primary key(trainer_id, plan_id)
 );
 
+-- week entity
+create table cart_item(
+    user_id int,
+    product_id int,
+    quantity int not null,
+    added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    primary key(user_id, product_id)
+);
+
 -- to do write the relationships between the tables
 
 Alter table users add foreign key (trainer_id) references trainers(id);
@@ -82,3 +91,5 @@ alter table enrollments add foreign key (plan_id) references plans(id);
 alter table trainer_plan add foreign key (trainer_id) references trainers(id);
 alter table trainer_plan add foreign key (plan_id) references plans(id);
 alter table products add foreign key (category_id) references categories(id);
+alter table user_cart add foreign key (user_id) references users(id);
+alter table user_cart add foreign key (product_id) references products(id);

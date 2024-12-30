@@ -9,6 +9,7 @@ const categorySelector = document.getElementById('category-selector') || console
 const productsApi = "/api/products";
 const categoriesApi = "/api/categories";
 
+
 let filters = {
     category: null,
     orderBy: null,

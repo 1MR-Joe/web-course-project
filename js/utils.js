@@ -79,6 +79,24 @@ export function showProducts(products, card, container) {
     });
 }
 
+
+export function showProductInCart(product, cart, card) {
+    // duplicate card
+    let cardCopy = card.cloneNode(true);
+
+    // fill card with data
+    cardCopy.removeAttribute('id');
+    cardCopy.classList.remove('hidden');
+
+    cardCopy.querySelector('.product-img-tag').src = `${new URL(product.image, window.location.origin)}`;
+    cardCopy.querySelector('.product-name').textContent = product.name;
+    cardCopy.querySelector('.product-description').textContent = product.description;
+    cardCopy.querySelector('.product-price').textContent = `${(product.price_in_cents) / 100}`;
+    cardCopy.querySelector('.quantity-selector').textContent = product.quantity;
+    // insert card in cart container
+    cart.appendChild(cardCopy);
+}
+
 /**
  * fills entities as selector options,
  * @param {HTMLSelectElement} container

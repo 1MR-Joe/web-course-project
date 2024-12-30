@@ -58,6 +58,9 @@ body{
     font-size: 18px;
 }
 
+.plan_btn:hover{
+cursor: pointer;
+}
 .auth_btn {
     margin-top: 20px;
     margin-left: 10px;

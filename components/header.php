@@ -1,4 +1,4 @@
-<header>
+<header data-id="$_SESSION['user_id']">
     <a href="./" class="logo">
         <img src="../images/gym_logo.png" alt="logo" width="110px" height="100px">
         <h1>Five Gym</h1>
