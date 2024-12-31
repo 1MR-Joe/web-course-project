@@ -46,8 +46,28 @@ function calculateViewTotal(data, shipping, tax, subTotalContainer, shippingCont
 async function initialize() {
     data = await fetchData(cartApi);
 
+    container.innerHTML = '';
     showProductInCart(data, card, container);
     calculateViewTotal(data, shippingFees, taxes, subTotalContainer, shippingContainer, taxContainer, totalContainer);
 }
+
+container.addEventListener('click', function (event) {
+    const removeButton = event.target.closest('.product-control-button');
+    const productId = parseInt(removeButton.getAttribute('data-id'));
+
+    data = new URLSearchParams({
+        product_id: `${productId}`
+    });
+
+    fetch(`${cartApi}?product_id=${productId}`)
+    .then(async response =>  {
+        if(response.ok) {
+            const data = await response.json();
+            console.log(data);
+            alert(data["message"]);
+            initialize();
+        }
+    });
+});
 
 initialize();

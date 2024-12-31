@@ -12,19 +12,30 @@ class EnrollmentService {
     ){        
     }
   
-    public function fetchByUserId(int $userid): array {
-    $userid=(int)$_SESSION['user_id'];
-    $query = "SELECT * FROM users where id=$userid";  
-    $result = mysqli_query($this->conn, $query);
+    public function createEnrollment(int $userId, int $planId): bool {
+        $query = "INSERT INTO enrollments(`user_id`, `plan_id`, `enrollmentDate`) VALUES ($userId, $planId, CURRENT_TIMESTAMP)";
+        $result = mysqli_query($this->conn, $query);
 
-    if(!$result){
-        error_log("Database query failed: " . mysqli_error($this->conn));
-        return [];
+        if(!$result){
+            error_log("Database query failed: " . mysqli_error($this->conn));
+            return false;
+        }
+
+        return true;
     }
 
-    $Enrollment = mysqli_fetch_assoc($result);
-        return $Enrollment;
+    public function fetchByUserId(int $userid): array {
+        $userid=(int)$_SESSION['user_id'];
+        $query = "SELECT * FROM users where id=$userid";  
+        $result = mysqli_query($this->conn, $query);
 
+        if(!$result){
+            error_log("Database query failed: " . mysqli_error($this->conn));
+            return [];
+        }
+
+        $Enrollment = mysqli_fetch_assoc($result);
+        return $Enrollment;
     }
     
 }

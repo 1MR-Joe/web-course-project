@@ -95,6 +95,8 @@ export function showProductInCart(data, card, container) {
         cardCopy.querySelector('.product-description').textContent = item.description;
         cardCopy.querySelector('.product-price').textContent = `${(item.price_in_cents) / 100}`;
         cardCopy.querySelector('.quantity-selector').value = item.quantity;
+        cardCopy.querySelector('span.favorite-button').setAttribute('data-id', item.id);
+        cardCopy.querySelector('span.remove-button').setAttribute('data-id', item.id);
         // insert card in cart container
         container.appendChild(cardCopy);
     });

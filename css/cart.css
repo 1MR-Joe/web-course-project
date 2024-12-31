@@ -81,11 +81,11 @@ h1, h2, h3, p {
     padding-bottom: 10px;
 }
 
-.product-control a {
+.product-control-button {
     margin-right: 10px;
     text-decoration: underline;
     color: var(--clr-accent);
-    /* cursor: pointer; */
+    cursor: pointer;
 }
 
 tr.vertical-border {

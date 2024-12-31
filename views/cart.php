@@ -85,8 +85,8 @@
                             </div>
                             <div class="product-info-lower">
                                 <div class="product-control">
-                                    <a href="#">Move to Favorites</a>
-                                    <a href="#">Remove</a>
+                                    <span class="product-control-button favorite-button">Move to Favorites</span>
+                                    <span class="product-control-button remove-button">Remove</span>
                                 </div>
                             </div>
                         </div>

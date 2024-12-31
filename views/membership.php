@@ -28,12 +28,13 @@ use Services\PlanService;
         <?php
          foreach($plans as $p) {
             $finalPrice = ((int)$p["price_in_cents"] / 100);
+            $planId = (int) $p['id'];
             $html = <<<html
                 <div class="membership_cart">
                     <h2>{$p["name"]}</h2>
                     <p class="description">{$p["description"]}</p>
                     <p class="price_text">$ {$finalPrice}</p>
-                    <input type="button" value="Get started" class="plan_btn">
+                        <button type="button" class="plan_btn" data-id="{$planId}" onclick="addPlan(this)">Get started</button>
                     <p>Features</p>
                     <hr width="250px">
                     <ul class="features_block">
@@ -56,6 +57,7 @@ use Services\PlanService;
     </form>
 
     <?php include __DIR__ . '/../components/footer.php' ?>
+    <script src="../js/membership.js"></script>
 </body>
 
 </html>

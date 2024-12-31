@@ -40,6 +40,11 @@ function addToCart() {
     console.log(request);
 
     fetch(cartItemApi, request)
-    .then(response => response.json())
-    .then(data => console.log(data));
+    .then(async response => {
+        if(response.ok) {
+            const data = await response.json();
+            console.log(data);
+            alert(data["message"]);
+        }
+    });
 }
