@@ -4,6 +4,10 @@
 const quantitySelector = document.getElementById('quantity-selector') || console.error('quantity selector not found');
 let quantity = quantitySelector.value || console.error("can't get quantity");
 
+quantitySelector.addEventListener('change', function() {
+    quantity = quantitySelector.value || console.error("can't get quantity");
+});
+
 // get product id from request params
 const url = new URL(window.location.href);
 const productId = url.searchParams.get('id') || console.error('product id not found');

@@ -20,10 +20,10 @@ use Services\PlanService;
 
 
     <form>
-        <div class="program_type">
+        <!-- <div class="program_type">
             <label class="type_category selected">Monthly</label>
             <label class="type_category">Daily</label>
-        </div>
+        </div> -->
         <div class="membership_plans">
         <?php
          foreach($plans as $p) {

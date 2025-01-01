@@ -47,7 +47,8 @@ return function (string $pattern, mysqli $conn) {
                     }
 
                 } else {
-                    if($_GET['product_id']) {
+                    $productId = $_GET['product_id'] ?? null;
+                    if(! is_null($productId)) {
                         // specific cart item id, will delete that cart item
                         try{
                             $cartItemService = new CartItemService($conn);

@@ -38,7 +38,8 @@ class AuthService {
         }
 
         if(sizeof($errors) === 0) {
-            $query = "INSERT INTO users (name, email, password, gender, phone, weight) values ('$username', '$email', '$password', '$gender', '$phone', 75.0)";
+            $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+            $query = "INSERT INTO users (name, email, password, gender, phone, weight) values ('$username', '$email', '$hashedPassword', '$gender', '$phone', 75.0)";
             $result = mysqli_query($this->conn, $query);
 
             if(! $query) {
